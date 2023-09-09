@@ -197,9 +197,9 @@ version = "2.2.1"
 
 [[deps.ConstructionBase]]
 deps = ["LinearAlgebra"]
-git-tree-sha1 = "fe2838a593b5f776e1597e086dcd47560d94e816"
+git-tree-sha1 = "c53fc348ca4d40d7b371e71fd52251839080cbc9"
 uuid = "187b0558-2788-49d3-abe0-74a17ed4e7c9"
-version = "1.5.3"
+version = "1.5.4"
 
     [deps.ConstructionBase.extensions]
     ConstructionBaseIntervalSetsExt = "IntervalSets"
@@ -1169,9 +1169,9 @@ weakdeps = ["ChainRulesCore"]
 
 [[deps.StaticArrays]]
 deps = ["LinearAlgebra", "Random", "StaticArraysCore"]
-git-tree-sha1 = "9cabadf6e7cd2349b6cf49f1915ad2028d65e881"
+git-tree-sha1 = "51621cca8651d9e334a659443a74ce50a3b6dfab"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "1.6.2"
+version = "1.6.3"
 weakdeps = ["Statistics"]
 
     [deps.StaticArrays.extensions]
@@ -1221,9 +1221,9 @@ version = "0.15.6"
 
 [[deps.StringManipulation]]
 deps = ["PrecompileTools"]
-git-tree-sha1 = "501d5f98610e6b946689a1d698b170d7a23770aa"
+git-tree-sha1 = "25ad9b0ccbc6cc63dfff1eb3f4bbb4d3e0d8a491"
 uuid = "892a3eda-7b42-436c-8928-eab12a02cf0e"
-version = "0.3.1"
+version = "0.3.2"
 
 [[deps.SuiteSparse]]
 deps = ["Libdl", "LinearAlgebra", "Serialization", "SparseArrays"]
@@ -1333,8 +1333,8 @@ uuid = "41fe7b60-77ed-43a1-b4f0-825fd5a5650d"
 version = "0.2.0"
 
 [[deps.VLDecisionsPackage]]
-deps = ["Distributions", "GLPK", "JuMP", "MadNLP", "Optim", "Plots"]
-git-tree-sha1 = "b36c1487ee71adba8f5b270dd8046ae8a646bd74"
+deps = ["Distributions", "GLPK", "JuMP", "LinearAlgebra", "MadNLP", "Optim", "Plots"]
+git-tree-sha1 = "2775d98badae78be9ef3937c50e2c13cda97ac12"
 repo-rev = "main"
 repo-url = "https://github.com/varnerlab/VLDecisionsPackage.jl.git"
 uuid = "10f378ab-a542-46fe-a8d0-50b9cbff3618"
