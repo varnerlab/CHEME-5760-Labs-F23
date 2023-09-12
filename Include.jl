@@ -19,6 +19,9 @@ using LinearAlgebra
 using Optim
 using StatsPlots
 using Distributions
+using JLD2
+using FileIO
+using LinearAlgebra
 
 # load my color palette -
 colors = Dict{Int,RGB}();
