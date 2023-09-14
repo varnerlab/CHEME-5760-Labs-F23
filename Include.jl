@@ -22,6 +22,7 @@ using Distributions
 using JLD2
 using FileIO
 using LinearAlgebra
+using MathOptInterface
 
 # load my color palette -
 colors = Dict{Int,RGB}();

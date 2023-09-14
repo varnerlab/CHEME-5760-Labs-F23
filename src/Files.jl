@@ -12,3 +12,4 @@ CustomerSurveyDataSet() = _load(joinpath(_PATH_TO_DATA, "Factor-Hair-Revised.csv
 TravelChoiceSurveyDataSet() = _load(joinpath(_PATH_TO_DATA, "VoT_21-Jun-2016_11-20_full_data.csv"));
 DresdenDataSet() = _load(joinpath(_PATH_TO_DATA, "DDModeChoice.csv"));
 MyPortfolioDataSet() = _jld2(joinpath(_PATH_TO_DATA, "OHLC-Daily-SP500-5-years-TD-1256.jld2"));
+MyFirmMappingDataSet() = _load(joinpath(_PATH_TO_DATA, "SP500-Firm-Mapping-06-22-23.csv"));
