@@ -1346,7 +1346,7 @@ version = "0.2.0"
 
 [[deps.VLDecisionsPackage]]
 deps = ["Distributions", "GLPK", "JuMP", "LinearAlgebra", "MadNLP", "MathOptInterface", "Optim", "Plots"]
-git-tree-sha1 = "3eac9a00366d1eb381a6fa90a807da49be933b64"
+git-tree-sha1 = "c4eecd63b04e1a56fdac4ff47167ac64f0d81898"
 repo-rev = "main"
 repo-url = "https://github.com/varnerlab/VLDecisionsPackage.jl.git"
 uuid = "10f378ab-a542-46fe-a8d0-50b9cbff3618"
