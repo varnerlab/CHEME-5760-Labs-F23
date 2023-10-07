@@ -1,13 +1,13 @@
 struct MyTravelersProblem end
 
-n_agents(simpleGame::MyTravelersProblem) = 2
-ordered_actions(simpleGame::MyTravelersProblem, i::Int) = 2:100
-ordered_joint_actions(simpleGame::MyTravelersProblem) = vec(collect(Iterators.product([ordered_actions(simpleGame, i) for i in 1:n_agents(simpleGame)]...)))
+n_agents(simpleGame::Type{MyTravelersProblem}) = 2
+ordered_actions(simpleGame::Type{MyTravelersProblem}, i::Int) = 2:100
+ordered_joint_actions(simpleGame::Type{MyTravelersProblem}) = vec(collect(Iterators.product([ordered_actions(simpleGame, i) for i in 1:n_agents(simpleGame)]...)))
 
-n_joint_actions(simpleGame::MyTravelersProblem) = length(ordered_joint_actions(simpleGame))
-n_actions(simpleGame::MyTravelersProblem, i::Int) = length(ordered_actions(simpleGame, i))
+n_joint_actions(simpleGame::Type{MyTravelersProblem}) = length(ordered_joint_actions(simpleGame))
+n_actions(simpleGame::Type{MyTravelersProblem}, i::Int) = length(ordered_actions(simpleGame, i))
 
-function reward(simpleGame::MyTravelersProblem, i::Int, a)
+function reward(simpleGame::Type{MyTravelersProblem}, i::Int, a)
     if i == 1
         noti = 2
     else
@@ -23,18 +23,21 @@ function reward(simpleGame::MyTravelersProblem, i::Int, a)
     return r
 end
 
-function joint_reward(simpleGame::MyTravelersProblem, a)
+function joint_reward(simpleGame::Type{MyTravelersProblem}, a)
     return [reward(simpleGame, i, a) for i in 1:n_agents(simpleGame)]
 end
 
-function build(simpleGame::MyTravelersProblem)
+function build(simpleGameType::Type{MyTravelersProblem})
+
+    # what problem are we trying to solve?
+    # simpleGame = simpleGameType();
 
     # build an empty model -
     model = MySimpleGameModel();
     model.γ = 0.9;
-    model.ℐ = vec(collect(1:n_agents(simpleGame)))
-    model.𝒜 = [ordered_actions(simpleGame, i) for i in 1:n_agents(simpleGame)]
-    model.R = (a) -> joint_reward(simpleGame, a)
+    model.ℐ = vec(collect(1:n_agents(simpleGameType)))
+    model.𝒜 = [ordered_actions(simpleGameType, i) for i in 1:n_agents(simpleGameType)]
+    model.R = (a) -> joint_reward(simpleGameType, a)
 
     # return the model -
     return model;

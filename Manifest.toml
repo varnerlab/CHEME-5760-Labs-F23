@@ -944,9 +944,9 @@ version = "10.42.0+0"
 
 [[deps.PDMats]]
 deps = ["LinearAlgebra", "SparseArrays", "SuiteSparse"]
-git-tree-sha1 = "528664265c9c36b3ecdb6d721d47aaab52ddf267"
+git-tree-sha1 = "fcf8fd477bd7f33cb8dbb1243653fb0d415c256c"
 uuid = "90014a1f-27ba-587c-ab20-58faa44d9150"
-version = "0.11.24"
+version = "0.11.25"
 
 [[deps.Parameters]]
 deps = ["OrderedCollections", "UnPack"]
@@ -1359,7 +1359,7 @@ version = "0.2.0"
 
 [[deps.VLDecisionsPackage]]
 deps = ["Distributions", "GLPK", "GridInterpolations", "JuMP", "LinearAlgebra", "MadNLP", "MathOptInterface", "Optim", "Plots"]
-git-tree-sha1 = "fa3fd2c2d8533b2ed0935f00257952becc2edd85"
+git-tree-sha1 = "f7dbb72e56b4d266ab9dad1349c5a6dde2c04619"
 repo-rev = "main"
 repo-url = "https://github.com/varnerlab/VLDecisionsPackage.jl.git"
 uuid = "10f378ab-a542-46fe-a8d0-50b9cbff3618"
