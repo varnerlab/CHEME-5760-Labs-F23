@@ -4,10 +4,10 @@ const _PATH_TO_SRC = joinpath(_ROOT, "src");
 const _PATH_TO_DATA = joinpath(_ROOT, "data");
 
 # download external packages
-# import Pkg; 
-# Pkg.add(path="https://github.com/varnerlab/VLQuantitativeFinancePackage.jl.git")
-# Pkg.add(path="https://github.com/varnerlab/VLDecisionsPackage.jl.git")
-# Pkg.activate("."); Pkg.instantiate(); Pkg.update()
+import Pkg; 
+Pkg.add(path="https://github.com/varnerlab/VLDecisionsPackage.jl.git")
+Pkg.add(path="https://github.com/varnerlab/VLQuantitativeFinancePackage.jl.git")
+Pkg.activate("."); Pkg.resolve(); Pkg.instantiate(); Pkg.update();
 
 # load external packages -
 using VLDecisionsPackage
@@ -40,4 +40,4 @@ include(joinpath(_PATH_TO_SRC, "Compute.jl"));
 include(joinpath(_PATH_TO_SRC, "Files.jl"));
 include(joinpath(_PATH_TO_SRC, "Budget.jl"));
 include(joinpath(_PATH_TO_SRC, "Indifference.jl"));
-include(joinpath(_PATH_TO_SRC, "Travelers.jl"));
+# include(joinpath(_PATH_TO_SRC, "Travelers.jl"));
