@@ -32,6 +32,8 @@ function build(modeltype::Type{MyCubicGridWorldModel}, data::NamedTuple)::MyCubi
     # initialize and empty model -
     model = modeltype();
 
+    w = range(0.0,stop=1.0,length=21) |> collect;
+
     # get the data -
     dimensions = data[:dimensions]
     rewards = data[:rewards]
@@ -56,19 +58,25 @@ function build(modeltype::Type{MyCubicGridWorldModel}, data::NamedTuple)::MyCubi
                 
                 # capture this corrdinate 
                 coordinate = (i,j,k);
-
-                # set -
-                coordinates[position_index] = coordinate;
-                states[coordinate] = position_index;
-
-                if (haskey(rewards,coordinate) == true)
-                    rewards_dict[position_index] = rewards[coordinate];
-                else
-                    rewards_dict[position_index] = defaultreward;
+                w_array = Array{Float64,1}()
+                for i in coordinate
+                    push!(w_array, w[i]);
                 end
 
-                # update position_index -
-                position_index += 1;
+                if (sum(w_array) == 1.0)
+                    # set -
+                    coordinates[position_index] = coordinate;
+                    states[coordinate] = position_index;
+
+                    if (haskey(rewards,coordinate) == true)
+                        rewards_dict[position_index] = rewards[coordinate];
+                    else
+                        rewards_dict[position_index] = defaultreward;
+                    end
+
+                    # update position_index -
+                    position_index += 1;
+                end
             end
         end
     end
@@ -80,7 +88,6 @@ function build(modeltype::Type{MyCubicGridWorldModel}, data::NamedTuple)::MyCubi
     moves[4] = (0,-1,0);
     moves[5] = (0,0,1);
     moves[6] = (0,0,-1);
-    moves[7] = (0,0,0);
 
     # add items to the model -
     model.rewards = rewards_dict
