@@ -27,6 +27,9 @@ using JLD2
 using FileIO
 using LinearAlgebra
 using MathOptInterface
+using Flux
+using OneHotArrays
+
 
 # load my color palette -
 colors = Dict{Int,RGB}();
